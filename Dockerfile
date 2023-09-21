@@ -17,5 +17,4 @@ RUN perl install-tl/install-tl --profile=texlive.profile && \
 	rm -r install-tl texlive.profile
 ENV PATH="/usr/local/texlive/2023/bin/x86_64-linuxmusl:${PATH}"
 
-WORKDIR /root
 VOLUME /root
