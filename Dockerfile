@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.18.3
 
 # Install utilities
 RUN apk update upgrade && \
