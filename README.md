@@ -13,6 +13,6 @@ To run the image:
 
 Platform|Command
 -|-
-UNIX-like|`docker run -iv $(pwd):/latex --rm whitefieldcat/latex [`*`command`*`] [`*`args...`*`]`
-Windows (`cmd`)|`docker run -iv %cd%:/latex --rm whitefieldcat/latex [`*`command`*`] [`*`args...`*`]`
-Windows (Powershell)|`docker run -iv ${PWD}:/latex --rm whitefieldcat/latex [`*`command`*`] [`*`args...`*`]`
+UNIX-like|`docker run -iv $(pwd):/latex --rm whitefieldcat/latex [command] [args...]`
+Windows (`cmd`)|`docker run -iv %cd%:/latex --rm whitefieldcat/latex [command] [args...]`
+Windows (Powershell)|`docker run -iv ${PWD}:/latex --rm whitefieldcat/latex [command] [args...]`
