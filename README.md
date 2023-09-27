@@ -2,17 +2,15 @@
 
 A containerised LaTeX environment that I maintain for personal use.
 
-## Instructions
+## Setup
 
-To build the image:
+1. Build the image:
 ```
-docker build -t whitefieldcat/latex .
+docker build -t whitefieldcat/latex
 ```
 
-To run the image:
+2. Add the appropriate wrapper script to your PATH and make it executable if necessary.
 
-Platform|Command
--|-
-UNIX-like|`docker run -iv $(pwd):/latex --rm whitefieldcat/latex [command] [args...]`
-Windows (`cmd`)|`docker run -iv %cd%:/latex --rm whitefieldcat/latex [command] [args...]`
-Windows (Powershell)|`docker run -iv ${PWD}:/latex --rm whitefieldcat/latex [command] [args...]`
+## Usage
+
+* To run one-off commands, pass the desired program and arguments to the `latexcmd.*` script.
