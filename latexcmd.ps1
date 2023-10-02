@@ -1,1 +1,6 @@
-docker run -iv ${PWD}:/latex --rm whitefieldcat/latex $args
+docker run `
+	-i `
+	--rm `
+	-v ${PWD}:/latex `
+	whitefieldcat/latex `
+	$args

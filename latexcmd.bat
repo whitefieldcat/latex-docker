@@ -1,2 +1,7 @@
 @echo off
-docker run -iv %cd%:/latex --rm whitefieldcat/latex %*
+docker run ^
+	-i ^
+	-v %cd%:/latex ^
+	--rm ^
+	whitefieldcat/latex ^
+	%*
