@@ -15,7 +15,7 @@ RUN curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 COPY texlive.profile .
 RUN perl install-tl/install-tl --profile=texlive.profile && \
 	rm -r install-tl texlive.profile
-ENV PATH="/usr/local/texlive/2023/bin/x86_64-linuxmusl:${PATH}"
+ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 
 WORKDIR /latex
 VOLUME /latex
