@@ -18,6 +18,10 @@ RUN mkdir install-tl && \
 	perl install-tl/install-tl --profile=texlive.profile && \
 # Cleanup
 	rm -r \
+		/etc/apk \
+		/lib/apk \
+		/sbin/apk \
+		/usr/share/apk \
 		/var/cache/apk \
 		install-tl \
 		install-tl-unx.tar.gz \
