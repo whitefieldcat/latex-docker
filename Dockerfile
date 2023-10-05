@@ -5,24 +5,26 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 COPY texlive.profile .
 
 RUN mkdir install-tl && \
-# Install utilities
+	# Install utilities
 	apk update upgrade && \
 	apk add \
 		curl \
 		fontconfig \
 		perl && \
-# Get TeX Live installer
+	# Get TeX Live installer
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1 && \
-# Install TeX Live
+	# Install TeX Live
 	perl install-tl/install-tl --profile=texlive.profile && \
-# Cleanup
+	# Cleanup
 	rm -r \
+		# apk
 		/etc/apk \
 		/lib/apk \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
+		# TeX Live artifacts
 		install-tl \
 		install-tl-unx.tar.gz \
 		texlive.profile
