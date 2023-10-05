@@ -18,13 +18,11 @@ RUN mkdir install-tl && \
 	perl install-tl/install-tl --profile=texlive.profile && \
 	# Cleanup
 	rm -r \
-		# apk
 		/etc/apk \
 		/lib/apk \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
-		# TeX Live artifacts
 		install-tl \
 		install-tl-unx.tar.gz \
 		texlive.profile
