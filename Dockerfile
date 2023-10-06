@@ -10,7 +10,8 @@ RUN mkdir install-tl && \
 	apk add \
 		curl \
 		fontconfig \
-		perl && \
+		perl \
+	&& \
 	# Get TeX Live installer
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1 && \
@@ -25,7 +26,8 @@ RUN mkdir install-tl && \
 		/var/cache/apk \
 		install-tl \
 		install-tl-unx.tar.gz \
-		texlive.profile
+		texlive.profile \
+	;
 
 WORKDIR /latex
 VOLUME /latex
