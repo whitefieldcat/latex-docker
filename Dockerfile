@@ -11,7 +11,7 @@ RUN mkdir install-tl; \
 		curl \
 		fontconfig \
 		perl \
-	&& \
+	; \
 	# Get TeX Live installer
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1; \
