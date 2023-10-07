@@ -22,6 +22,7 @@ To start a container as a daemon, run the `latexd-start` script, e.g.
 ```
 .\latexd-start.bat
 ```
+Note: the working directory that the container will have access to will be fixed to the directory from which this command was issued.
 
 To issue a command to a running daemon, run the `latexd-cmd` script with the desired program and arguments, e.g.
 ```
