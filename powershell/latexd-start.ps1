@@ -2,7 +2,7 @@ docker run `
 	-d `
 	-i `
 	-t `
-	-v %cd%:/latex `
+	-v ${PWD}:/latex `
 	--rm `
 	--name latexd `
 	whitefieldcat/latex `
