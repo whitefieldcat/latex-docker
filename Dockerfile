@@ -2,7 +2,7 @@ FROM alpine:3.18.3
 
 ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 
-COPY texlive.profile .
+COPY . .
 
 RUN mkdir install-tl; \
 	# Install utilities
