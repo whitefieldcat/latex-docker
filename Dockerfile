@@ -15,12 +15,15 @@ RUN mkdir install-tl; \
 	# Get TeX Live installer
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1; \
-	# Install TeX Live
+	# Install TeX Live core
 	perl install-tl/install-tl --profile=texlive.profile; \
+	# Install TeX Live packages
+	cat /lists/packages.txt | xargs -n1 tlmgr install; \
 	# Cleanup
 	rm -r \
 		/etc/apk \
 		/lib/apk \
+		/lists \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
