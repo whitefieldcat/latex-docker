@@ -2,6 +2,15 @@
 
 A containerised LaTeX environment that I maintain for personal use.
 
+**Base image:**
+Alpine 3.18.3
+
+**Installed TeX Live packages:**
+(see `lists/packages.txt` for a non-exhaustive list of names)
+
+**Installed fonts:**
+(see `lists/fonts.txt` for an exhaustive list of links)
+
 ## Setup
 
 1. Build the image:
