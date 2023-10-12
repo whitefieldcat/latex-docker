@@ -18,10 +18,10 @@ RUN mkdir install-tl; \
 	# Install TeX Live core
 	perl install-tl/install-tl --profile=texlive.profile; \
 	# Install TeX Live packages
-	cat /lists/packages.txt | xargs -n1 tlmgr install; \
+	tlmgr install $(xargs echo < /lists/packages.txt); \
 	# Install fonts
 	mkdir -p /usr/share/fonts; \
-	cat /lists/fonts.txt | xargs -n1 curl --output-dir /usr/share/fonts -OL; \
+	curl $(xargs -I {} printf "-OL {} " {} < /lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
 	fc-cache -rv; \
 	# Cleanup
 	rm -r \
