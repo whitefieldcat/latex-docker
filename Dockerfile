@@ -25,11 +25,14 @@ RUN mkdir install-tl; \
 	fc-cache -rv; \
 	# Cleanup
 	rm -r \
+		# apk
 		/etc/apk \
 		/lib/apk \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
+		/var/lib/apk \
+		# Installation artifacts
 		install-tl \
 		install-tl-unx.tar.gz \
 		lists \
