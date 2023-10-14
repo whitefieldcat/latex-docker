@@ -18,21 +18,21 @@ RUN mkdir install-tl; \
 	# Install TeX Live core
 	perl install-tl/install-tl --profile=texlive.profile; \
 	# Install TeX Live packages
-	tlmgr install $(xargs echo < /lists/packages.txt); \
+	tlmgr install $(xargs echo < lists/packages.txt); \
 	# Install fonts
 	mkdir -p /usr/share/fonts; \
-	curl $(xargs -I {} printf "-OL {} " {} < /lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
+	curl $(xargs -I {} printf "-OL {} " {} < lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
 	fc-cache -rv; \
 	# Cleanup
 	rm -r \
 		/etc/apk \
 		/lib/apk \
-		/lists \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
 		install-tl \
 		install-tl-unx.tar.gz \
+		lists \
 		texlive.profile \
 	;
 
