@@ -24,7 +24,9 @@ RUN tlmgr install \
 	bidi \
 	fontspec \
 	gb4e \
+	glossaries \
 	leipzig \
+	tools \
 	xetex \
 ;
 
