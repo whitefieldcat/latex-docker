@@ -25,6 +25,7 @@ RUN tlmgr install \
 	fontspec \
 	gb4e \
 	glossaries \
+	hyperref \
 	leipzig \
 	tools \
 	xetex \
