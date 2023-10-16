@@ -29,6 +29,8 @@ RUN mkdir install-tl; \
 		/etc/apk \
 		/lib/apk \
 		/sbin/apk \
+		/usr/local/texlive/install-tl \
+		/usr/local/texlive/tlpkg/texlive.profile \
 		/usr/share/apk \
 		/var/cache/apk \
 		/var/lib/apk \
