@@ -1,7 +1,5 @@
 FROM alpine:3.18.3
 
-ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
-
 COPY . .
 
 # Update + install basic utilities
@@ -19,6 +17,7 @@ RUN \
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1; \
 	perl install-tl/install-tl --profile=texlive.profile
+ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 
 # Install TeX Live packages
 RUN tlmgr install \

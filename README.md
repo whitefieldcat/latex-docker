@@ -6,10 +6,10 @@ A containerised LaTeX environment that I maintain for personal use.
 Alpine 3.18.3
 
 **Installed TeX Live packages:**
-(see `lists/packages.txt` for a non-exhaustive list of names)
+(see the command under `# Install TeX Live packages` in `Dockerfile` for a non-exhaustive list)
 
 **Installed fonts:**
-(see `lists/fonts.txt` for an exhaustive list of links)
+(see the command under `# Install fonts` in `Dockerfile` for an exhaustive list)
 
 ## Setup
 
