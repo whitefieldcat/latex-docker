@@ -24,15 +24,14 @@ RUN mkdir install-tl; \
 	curl $(xargs -I {} printf "-OL {} " {} < lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
 	fc-cache -rv; \
 	# Cleanup
+	apk del curl; \
 	rm -r \
-		# apk
 		/etc/apk \
 		/lib/apk \
 		/sbin/apk \
 		/usr/share/apk \
 		/var/cache/apk \
 		/var/lib/apk \
-		# Installation artifacts
 		install-tl \
 		install-tl-unx.tar.gz \
 		lists \
