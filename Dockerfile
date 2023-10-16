@@ -4,41 +4,39 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 
 COPY . .
 
-RUN mkdir install-tl; \
-	# Install utilities
+# Update + install basic utilities
+RUN \
 	apk update upgrade; \
 	apk add \
 		curl \
 		fontconfig \
 		perl \
-	; \
-	# Get TeX Live installer
+	;
+
+# Install TeX Live system
+RUN \
+	mkdir install-tl; \
 	curl -OL https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz; \
 	zcat < install-tl-unx.tar.gz | tar xf - -C install-tl --strip-components=1; \
-	# Install TeX Live core
-	perl install-tl/install-tl --profile=texlive.profile; \
-	# Install TeX Live packages
-	tlmgr install $(xargs echo < lists/packages.txt); \
-	# Install fonts
+	perl install-tl/install-tl --profile=texlive.profile
+
+# Install TeX Live packages
+RUN tlmgr install $(xargs echo < lists/packages.txt)
+
+# Install fonts
+RUN \
 	mkdir -p /usr/share/fonts; \
 	curl $(xargs -I {} printf "-OL {} " {} < lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
-	fc-cache -rv; \
-	# Cleanup
-	apk del curl; \
-	rm -r \
-		/etc/apk \
-		/lib/apk \
-		/sbin/apk \
-		/usr/local/texlive/install-tl \
-		/usr/local/texlive/tlpkg/texlive.profile \
-		/usr/share/apk \
-		/var/cache/apk \
-		/var/lib/apk \
-		install-tl \
-		install-tl-unx.tar.gz \
-		lists \
-		texlive.profile \
-	;
+	fc-cache -rv
+
+# Cleanup
+RUN rm -fr \
+	install-tl \
+	install-tl \
+	install-tl-unx.tar.gz \
+	lists \
+	texlive.profile \
+;
 
 WORKDIR /latex
 VOLUME /latex
