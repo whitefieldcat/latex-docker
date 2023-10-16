@@ -1,5 +1,0 @@
-bidi
-fontspec
-gb4e
-leipzig
-xetex

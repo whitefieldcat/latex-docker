@@ -21,12 +21,23 @@ RUN \
 	perl install-tl/install-tl --profile=texlive.profile
 
 # Install TeX Live packages
-RUN tlmgr install $(xargs echo < lists/packages.txt)
+RUN tlmgr install \
+	bidi \
+	fontspec \
+	gb4e \
+	leipzig \
+	xetex \
+;
 
 # Install fonts
 RUN \
 	mkdir -p /usr/share/fonts; \
-	curl $(xargs -I {} printf "-OL {} " {} < lists/fonts.txt | xargs) --output-dir /usr/share/fonts; \
+	curl --output-dir /usr/share/fonts \
+		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Bold.ttf \
+		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-BoldItalic.ttf \
+		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Italic.ttf \
+		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Regular.ttf \
+	; \
 	fc-cache -rv
 
 # Cleanup
