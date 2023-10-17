@@ -28,6 +28,7 @@ RUN tlmgr install \
 	hyperref \
 	leipzig \
 	tools \
+	xcolor \
 	xetex \
 ;
 
