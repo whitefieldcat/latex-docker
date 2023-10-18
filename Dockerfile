@@ -46,7 +46,6 @@ RUN \
 # Cleanup
 RUN rm -fr \
 	install-tl \
-	install-tl \
 	install-tl-unx.tar.gz \
 	lists \
 	texlive.profile \
