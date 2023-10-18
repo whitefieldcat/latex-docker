@@ -22,6 +22,7 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 # Install TeX Live packages
 RUN tlmgr install \
 	bidi \
+	fancyhdr \
 	fontspec \
 	gb4e \
 	glossaries \
