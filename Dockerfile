@@ -23,15 +23,22 @@ ENV PATH="/usr/local/texlive/bin/x86_64-linuxmusl:${PATH}"
 RUN tlmgr install \
 	bidi \
 	booktabs \
+	etoolbox \
 	fancyhdr \
 	fontspec \
 	gb4e \
 	glossaries \
+	graphics \
 	hyperref \
+	infwarerr \
+	kvoptions \
 	leipzig \
+	pdftexcmds \
+	titlesec \
 	tools \
 	xcolor \
 	xetex \
+	zref \
 ;
 
 # Install fonts
