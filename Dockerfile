@@ -46,6 +46,7 @@ RUN \
 	mkdir -p /usr/share/fonts; \
 	curl --output-dir /usr/share/fonts \
 		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-{Bold,BoldItalic,Italic,Regular}.ttf \
+		-OL https://github.com/Tarobish/Mirza/raw/gh-pages/Fonts/Mirza-{Bold,Regular}.ttf \
 	; \
 	fc-cache -rv
 
