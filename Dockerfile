@@ -45,10 +45,7 @@ RUN tlmgr install \
 RUN \
 	mkdir -p /usr/share/fonts; \
 	curl --output-dir /usr/share/fonts \
-		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Bold.ttf \
-		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-BoldItalic.ttf \
-		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Italic.ttf \
-		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-Regular.ttf \
+		-OL https://github.com/notofonts/notofonts.github.io/raw/main/fonts/NotoSerif/hinted/ttf/NotoSerif-{Bold,BoldItalic,Italic,Regular}.ttf \
 	; \
 	fc-cache -rv
 
