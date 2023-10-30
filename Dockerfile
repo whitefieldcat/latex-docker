@@ -24,6 +24,7 @@ RUN tlmgr install \
 	bidi \
 	booktabs \
 	etoolbox \
+	expex \
 	fancyhdr \
 	fontspec \
 	gb4e \
