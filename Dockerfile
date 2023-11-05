@@ -34,6 +34,7 @@ RUN tlmgr install \
 	infwarerr \
 	kvoptions \
 	leipzig \
+	parskip \
 	pdftexcmds \
 	titlesec \
 	tools \
