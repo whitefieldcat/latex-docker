@@ -26,6 +26,7 @@ RUN tlmgr install \
 	etoolbox \
 	expex \
 	fancyhdr \
+	float \
 	fontspec \
 	gb4e \
 	glossaries \
