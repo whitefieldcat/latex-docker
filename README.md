@@ -2,14 +2,17 @@
 
 A containerised LaTeX environment that I maintain for personal use.
 
+## Basic information
+
 **Base image:**
-Alpine 3.18.3
+Alpine
+3.18.3
 
-**Installed TeX Live packages:**
-(see the command under `# Install TeX Live packages` in `Dockerfile` for a non-exhaustive list)
+**TeX Live packages:**
+see the output of `tlmgr list --only-installed` for an exhaustive list.
 
-**Installed fonts:**
-(see the command under `# Install fonts` in `Dockerfile` for an exhaustive list)
+**Fonts:**
+see the output of `fc-list` for an exhaustive list.
 
 ## Setup
 
